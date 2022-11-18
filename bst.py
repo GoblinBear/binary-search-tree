@@ -147,27 +147,6 @@ class BST:
             print('\n')
 
 
-
-
-'''
-      01
-    /    \
-  XX      04 
- /  \    /  \
-XX  XX  03  XX
-'''
-
-'''
-              00                              00                14, 30(+16)
-        /            \                                          (8)
-      00              00              00              00        6, 14(+8 pow(2,3))
-    /    \          /    \                                      (4)
-  00      00      00      00      00      00      00      00    2, 6(+4 pow(2,2))
- /  \    /  \    /  \    /  \                                   (1)
-00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  0, 2(2+0)
-'''
-                              
-
 def main():
     bst = BST()
     bst.insert(24)
@@ -188,12 +167,6 @@ def main():
     bst.insert(49)
 
     bst.display()
-
-    # print(f'{bst.search(33)=}')
-    # print(f'{bst.search(37)=}')
-
-    # bst.delete(35)
-    # bst.display()
 
 
 if __name__ == '__main__':
