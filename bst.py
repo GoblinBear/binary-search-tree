@@ -13,20 +13,20 @@ class BST:
         if self.root is None:
             self.root = Node(value)
             return
-        
+
         current = self.root
         while current:
             if value > current.data:
                 if current.right is None:
                     current.right = Node(value)
                     return
-                
+
                 current = current.right
             else:
                 if current.left is None:
                     current.left = Node(value)
                     return
-                
+
                 current = current.left
 
     def search(self, value):
@@ -38,7 +38,7 @@ class BST:
                 current = current.right
             else:
                 return current
-        
+
         return None
 
     def delete(self, value):
@@ -54,7 +54,7 @@ class BST:
 
         if current is None:
             return False
-        
+
         if current.left and current.right:
             min_current = current.right
             min_current_parent = current
@@ -86,10 +86,10 @@ class BST:
     def __depth(self, root):
         if root is None:
             return 0
-        
+
         left_depth = self.__depth(root.left)
         right_depth = self.__depth(root.right)
-        
+
         if left_depth > right_depth:
             return left_depth + 1
         else:
@@ -129,7 +129,7 @@ class BST:
             for i in range(1, h):
                 pre_space = pre_space + pow(2, i)
                 interval_space = interval_space + pow(2, i + 1)
-                
+
             for i in range(pre_space):
                 print(' ', end='')
 
