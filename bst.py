@@ -41,6 +41,24 @@ class BST:
 
         return None
 
+    def get_top_k(self, k):
+        stack = []
+        current = self.root
+        count = 0
+        result = []
+
+        while (stack or current) and count < k:
+            if current:
+                stack.append(current)
+                current = current.right
+            else:
+                current = stack.pop()
+                result.append(current.data)
+                count = count + 1
+                current = current.left
+
+        return result
+
     def delete(self, value):
         current = self.root
         current_parent = None
@@ -94,6 +112,38 @@ class BST:
             return left_depth + 1
         else:
             return right_depth + 1
+
+    def inorder_traversal_ascending(self):
+        stack = []
+        current = self.root
+        result = []
+
+        while stack or current:
+            if current:
+                stack.append(current)
+                current = current.left
+            else:
+                current = stack.pop()
+                result.append(current.data)
+                current = current.right
+
+        return result
+
+    def inorder_traversal_descending(self):
+        stack = []
+        current = self.root
+        result = []
+
+        while stack or current:
+            if current:
+                stack.append(current)
+                current = current.right
+            else:
+                current = stack.pop()
+                result.append(current.data)
+                current = current.left
+
+        return result
 
     def display(self):
         print()
@@ -167,6 +217,10 @@ def main():
     bst.insert(49)
 
     bst.display()
+    print(bst.inorder_traversal_ascending())
+    print(bst.inorder_traversal_descending())
+    print(bst.get_top_k(3))
+    print(bst.get_top_k(5))
 
 
 if __name__ == '__main__':

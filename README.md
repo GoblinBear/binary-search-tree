@@ -9,7 +9,10 @@ $ python3 bst.py
 Features:
 - `insert()`
 - `search()`
+- `get_top_k()`
 - `delete()`
+- `inorder_traversal_ascending()`
+- `inorder_traversal_descending()`
 - `display()`
 
 ```python
